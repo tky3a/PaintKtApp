@@ -1,0 +1,2 @@
+rootProject.name = "PaintKtApp"
+include ':app'
