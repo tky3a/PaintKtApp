@@ -16,13 +16,14 @@ class MyView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
     private var paint: Paint = Paint() // 色とか太さ
     private var drawX: Float = 0F
     private var drawY: Float = 0F
+    var lineWidth: Float = 20F
 
     // 2.onDraw(描画の準備)
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         paint.color = Color.BLUE // 色
         paint.style = Paint.Style.STROKE // 描画のスタイルを線にする
-        paint.strokeWidth = 20F // 幅
+        paint.strokeWidth = lineWidth // 幅
         canvas?.drawPath(path, paint)
     }
 
@@ -50,5 +51,10 @@ class MyView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
     fun clearCanvas(){
         path.reset()
         invalidate()
+    }
+
+    // 線の太さを変換する
+    fun changeLine(float:Float){
+        lineWidth = float
     }
 }

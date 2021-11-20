@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PaintKtApp</string>
+    <string name="clear">CLEAR</string>
 </resources>
